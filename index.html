@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Spiegazione movimenti Drawable in ImageButton</title>
+</head>
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <p>
+        
+    </p>
+
+    <pre>
+        <code class='language-java'>
+            public class SquareButtonListener implements View.OnClickListener {
+                private ImageButton previouslyClickedButton = null;
+                // ...
+                @Override
+                public void onClick(View v) {
+                    if (previouslyClickedButton == null) 
+                        previouslyClickedButton = (ImageButton) v;
+
+                    // ...
+                    // Viene verificata se la mossa è legale
+                    // ...                    
+
+                    ImageButton currentButton = (ImageButton) v;
+                    moveImageButton(currentButton);
+                    previouslyClickedButton = null;
+                }
+
+                private void moveImageButton(ImageButton newButton) {
+                    Drawable previousDrawable = previouslyClickedButton.getDrawable();
+                    newButton.setImageDrawable(previousDrawable);
+                    previouslyClickedButton.setImageDrawable(null);
+                }
+                // ...
+            }
+        </code>
+    </pre>
+
+    <pre>
+        <code class='language-java'>
+            public 
+        </code>
+    </pre>
+</body>
+</html>
